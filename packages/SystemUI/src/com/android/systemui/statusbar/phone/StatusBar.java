@@ -3536,6 +3536,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             mStatusBarStateController.setState(StatusBarState.KEYGUARD);
         }
         updatePanelExpansionForKeyguard();
+        mNotificationPanelViewController.updateNotificationTranslucency();
         if (mDraggedDownEntry != null) {
             mDraggedDownEntry.setUserLocked(false);
             mDraggedDownEntry.notifyHeightChanged(false /* needsAnimation */);
@@ -3932,6 +3933,10 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     public VisualizerView getLsVisualizer() {
         return mVisualizerView;
+    }
+
+    public PulseController getPulseController() {
+        return mPulseController;
     }
 
     @Override
