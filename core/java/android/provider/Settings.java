@@ -5616,6 +5616,12 @@ public final class Settings {
         public static final String AMBIENT_ICONS_COLOR = "ambient_icons_color";
 
         /**
+         * Enable and disable QS Panel visualizer
+         * @hide
+         */
+        public static final String VISUALIZER_CENTER_MIRRORED = "visualizer_center_mirrored";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
@@ -10076,6 +10082,12 @@ public final class Settings {
          * @hide
          */
         public static final String SCREENRECORD_IN_POWER_MENU = "screenrecord_in_power_menu";
+
+        /**
+         * Pulse gravity
+         * @hide
+         */
+        public static final String PULSE_CUSTOM_GRAVITY = "pulse_custom_gravity";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to
