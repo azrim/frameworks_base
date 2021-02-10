@@ -590,17 +590,15 @@ public class KeyguardStatusView extends GridLayout implements
     }
 
     private void updateSmartMediaVisibilityAuto() {
+        customHandler.removeCallbacks(setSmartMediaVisible);
+        customHandler.removeCallbacks(setSmartMediaInvisible);
         if (!mSmartMediaOnAnimation) {
             if ((getShowSmartMedia() && !mSmartMediaVisibility) && isNowPlaying()) {
                 if (mSmartMediaAutoShow != 0) {
-                    customHandler.removeCallbacks(setSmartMediaVisible);
-                    customHandler.removeCallbacks(setSmartMediaInvisible);
                     customHandler.postDelayed(setSmartMediaVisible, mSmartMediaAutoShow * 1000);
                 }
             } else if (mSmartMediaVisibility) {
                 if (mSmartMediaAutoHide != 0) {
-                    customHandler.removeCallbacks(setSmartMediaVisible);
-                    customHandler.removeCallbacks(setSmartMediaInvisible);
                     customHandler.postDelayed(setSmartMediaInvisible, mSmartMediaAutoHide * 1000);
                 }
             }
